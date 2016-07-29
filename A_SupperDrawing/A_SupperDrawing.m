@@ -9,6 +9,8 @@
 #import "A_SupperDrawing.h"
 #include <math.h>
 
+#define DEGREES_TO_RADIANS(degrees)((M_PI * degrees)/180)
+
 @implementation A_SupperDrawing {
     double _a;
     double _b;
@@ -97,11 +99,6 @@
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(size, size), false, deviceScale);
     
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    // Change the angle
-//    CGContextTranslateCTM(context, size/2, size/2);
-//    CGContextRotateCTM(context, 45*M_PI/180);
-//    CGContextTranslateCTM(context, -size/2, -size/2);
 
     [color setStroke];
     [path stroke];
@@ -114,6 +111,15 @@
     
     UIGraphicsEndImageContext();
     return result;
+}
+- (CAShapeLayer *)generateLayerWithSize:(double)size zoomRate:(double)zoomRate precision:(double)precision
+                              lineWidth:(float)lineWidth lineColor:(UIColor *)lineColor fillColor:(UIColor *)fillColor {
+    UIBezierPath *path = [self generatePathWithSize:size zoomRate:zoomRate precision:precision lineWidth:lineWidth];
+    CAShapeLayer *layer = [CAShapeLayer layer];
+    layer.path = path.CGPath;
+    layer.strokeColor = [lineColor CGColor];
+    layer.fillColor = [fillColor CGColor];
+    return layer;
 }
 
 #pragma mark - Extra helping functions
@@ -155,6 +161,32 @@
     return [self generateImageWithSize:size zoomRate:zoomRate precision:6000 lineWidth:lineWidth color:color];
 }
 
-
+- (CAShapeLayer *)generateLayerWithSize:(double)size {
+    return [self generateLayerWithSize:size zoomRate:0.84 precision:6000 lineWidth:1.0 lineColor:[UIColor blackColor] fillColor:[UIColor clearColor]];
+}
+- (CAShapeLayer *)generateLayerWithSize:(double)size lineColor:(UIColor *)lineColor {
+    return [self generateLayerWithSize:size zoomRate:0.84 precision:6000 lineWidth:1.0 lineColor:lineColor fillColor:[UIColor clearColor]];
+}
+- (CAShapeLayer *)generateLayerWithSize:(double)size lineWidth:(double)lineWidth {
+    return [self generateLayerWithSize:size zoomRate:0.84 precision:6000 lineWidth:lineWidth lineColor:[UIColor blackColor] fillColor:[UIColor clearColor]];
+}
+- (CAShapeLayer *)generateLayerWithSize:(double)size lineWidth:(double)lineWidth lineColor:(UIColor *)lineColor {
+    return [self generateLayerWithSize:size zoomRate:0.84 precision:6000 lineWidth:lineWidth lineColor:lineColor fillColor:[UIColor clearColor]];
+}
+- (CAShapeLayer *)generateLayerWithSize:(double)size lineWidth:(double)lineWidth lineColor:(UIColor *)lineColor fillColor:(UIColor *)fillColor {
+    return [self generateLayerWithSize:size zoomRate:0.84 precision:6000 lineWidth:lineWidth lineColor:lineColor fillColor:fillColor];
+}
+- (CAShapeLayer *)generateLayerWithSize:(double)size zoomRate:(double)zoomRate {
+    return [self generateLayerWithSize:size zoomRate:zoomRate precision:6000 lineWidth:1.0 lineColor:[UIColor blackColor] fillColor:[UIColor clearColor]];
+}
+- (CAShapeLayer *)generateLayerWithSize:(double)size zoomRate:(double)zoomRate lineColor:(UIColor *)lineColor {
+    return [self generateLayerWithSize:size zoomRate:zoomRate precision:6000 lineWidth:1.0 lineColor:lineColor fillColor:[UIColor clearColor]];
+}
+- (CAShapeLayer *)generateLayerWithSize:(double)size zoomRate:(double)zoomRate lineWidth:(double)lineWidth lineColor:(UIColor *)lineColor {
+    return [self generateLayerWithSize:size zoomRate:zoomRate precision:6000 lineWidth:lineWidth lineColor:lineColor fillColor:[UIColor clearColor]];
+}
+- (CAShapeLayer *)generateLayerWithSize:(double)size zoomRate:(double)zoomRate lineWidth:(double)lineWidth lineColor:(UIColor *)lineColor fillColor:(UIColor *)fillColor {
+    return [self generateLayerWithSize:size zoomRate:zoomRate precision:6000 lineWidth:lineWidth lineColor:lineColor fillColor:fillColor];
+}
 
 @end

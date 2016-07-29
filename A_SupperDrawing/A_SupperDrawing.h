@@ -72,4 +72,14 @@
 - (UIImage *)generateImageWithSize:(double)size zoomRate:(double)zoomRate;
 - (UIImage *)generateImageWithSize:(double)size zoomRate:(double)zoomRate lineWidth:(double)lineWidth color:(UIColor *)color;
 
+- (CAShapeLayer *)generateLayerWithSize:(double)size;
+- (CAShapeLayer *)generateLayerWithSize:(double)size lineColor:(UIColor *)lineColor;
+- (CAShapeLayer *)generateLayerWithSize:(double)size lineWidth:(double)lineWidth;
+- (CAShapeLayer *)generateLayerWithSize:(double)size lineWidth:(double)lineWidth lineColor:(UIColor *)lineColor;
+- (CAShapeLayer *)generateLayerWithSize:(double)size lineWidth:(double)lineWidth lineColor:(UIColor *)lineColor fillColor:(UIColor *)fillColor;
+- (CAShapeLayer *)generateLayerWithSize:(double)size zoomRate:(double)zoomRate;
+- (CAShapeLayer *)generateLayerWithSize:(double)size zoomRate:(double)zoomRate lineColor:(UIColor *)lineColor;
+- (CAShapeLayer *)generateLayerWithSize:(double)size zoomRate:(double)zoomRate lineWidth:(double)lineWidth lineColor:(UIColor *)lineColor;
+- (CAShapeLayer *)generateLayerWithSize:(double)size zoomRate:(double)zoomRate lineWidth:(double)lineWidth lineColor:(UIColor *)lineColor fillColor:(UIColor *)fillColor;
+
 @end
