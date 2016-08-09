@@ -93,8 +93,9 @@
     
     return bezier;
 }
+
 - (UIImage *)generateImageWithSize:(double)size zoomRate:(double)zoomRate precision:(double)precision
-                         lineWidth:(float)lineWidth color:(UIColor *)color {
+                         lineWidth:(float)lineWidth lineColor:(UIColor *)lineColor fillColor:(UIColor *)fillColor {
     CGFloat deviceScale = [UIScreen mainScreen].scale;
     
     UIBezierPath *path = [self generatePathWithSize:size zoomRate:zoomRate precision:precision lineWidth:lineWidth];
@@ -102,8 +103,13 @@
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(size, size), false, deviceScale);
     
     CGContextRef context = UIGraphicsGetCurrentContext();
-
-    [color setStroke];
+    
+    if (lineColor) {
+        [lineColor setStroke];
+    }
+    if (fillColor) {
+        [fillColor setFill];
+    }
     [path stroke];
     
     // Style of Join
@@ -115,6 +121,7 @@
     UIGraphicsEndImageContext();
     return result;
 }
+
 - (CAShapeLayer *)generateLayerWithSize:(double)size zoomRate:(double)zoomRate precision:(double)precision
                               lineWidth:(float)lineWidth lineColor:(UIColor *)lineColor fillColor:(UIColor *)fillColor {
     UIBezierPath *path = [self generatePathWithSize:size zoomRate:zoomRate precision:precision lineWidth:lineWidth];
@@ -146,22 +153,37 @@
 }
 
 - (UIImage *)generateImageWithSize:(double)size {
-    return [self generateImageWithSize:size zoomRate:0.84 precision:6000 lineWidth:1.0 color:[UIColor blackColor]];
+    return [self generateImageWithSize:size zoomRate:0.84 precision:6000 lineWidth:1.0 lineColor:[UIColor blackColor] fillColor:nil];
 }
-- (UIImage *)generateImageWithSize:(double)size color:(UIColor *)color {
-    return [self generateImageWithSize:size zoomRate:0.84 precision:6000 lineWidth:1.0 color:color];
+- (UIImage *)generateImageWithSize:(double)size lineColor:(UIColor *)lineColor {
+    return [self generateImageWithSize:size zoomRate:0.84 precision:6000 lineWidth:1.0 lineColor:lineColor fillColor:nil];
+}
+- (UIImage *)generateImageWithSize:(double)size lineColor:(UIColor *)lineColor fillColor:(UIColor *)fillColor {
+    return [self generateImageWithSize:size zoomRate:0.84 precision:6000 lineWidth:1.0 lineColor:lineColor fillColor:fillColor];
 }
 - (UIImage *)generateImageWithSize:(double)size lineWidth:(double)lineWidth {
-    return [self generateImageWithSize:size zoomRate:0.84 precision:6000 lineWidth:lineWidth color:[UIColor blackColor]];
+    return [self generateImageWithSize:size zoomRate:0.84 precision:6000 lineWidth:lineWidth lineColor:[UIColor blackColor] fillColor:nil];
 }
-- (UIImage *)generateImageWithSize:(double)size lineWidth:(double)lineWidth color:(UIColor *)color {
-    return [self generateImageWithSize:size zoomRate:0.84 precision:6000 lineWidth:lineWidth color:color];
+- (UIImage *)generateImageWithSize:(double)size lineWidth:(double)lineWidth lineColor:(UIColor *)lineColor {
+    return [self generateImageWithSize:size zoomRate:0.84 precision:6000 lineWidth:lineWidth lineColor:lineColor fillColor:nil];
+}
+- (UIImage *)generateImageWithSize:(double)size fillColor:(UIColor *)fillColor {
+    return [self generateImageWithSize:size zoomRate:0.84 precision:6000 lineWidth:0.0 lineColor:nil fillColor:fillColor];
 }
 - (UIImage *)generateImageWithSize:(double)size zoomRate:(double)zoomRate {
-    return [self generateImageWithSize:size zoomRate:zoomRate precision:6000 lineWidth:1.0 color:[UIColor blackColor]];
+    return [self generateImageWithSize:size zoomRate:zoomRate precision:6000 lineWidth:1.0 lineColor:[UIColor blackColor] fillColor:nil];
 }
-- (UIImage *)generateImageWithSize:(double)size zoomRate:(double)zoomRate lineWidth:(double)lineWidth color:(UIColor *)color {
-    return [self generateImageWithSize:size zoomRate:zoomRate precision:6000 lineWidth:lineWidth color:color];
+- (UIImage *)generateImageWithSize:(double)size zoomRate:(double)zoomRate lineWidth:(double)lineWidth lineColor:(UIColor *)lineColor {
+    return [self generateImageWithSize:size zoomRate:zoomRate precision:6000 lineWidth:lineWidth lineColor:lineColor fillColor:nil];
+}
+- (UIImage *)generateImageWithSize:(double)size zoomRate:(double)zoomRate lineColor:(UIColor *)lineColor fillColor:(UIColor *)fillColor {
+    return [self generateImageWithSize:size zoomRate:zoomRate precision:6000 lineWidth:1.0 lineColor:lineColor fillColor:fillColor];
+}
+- (UIImage *)generateImageWithSize:(double)size zoomRate:(double)zoomRate lineWidth:(double)lineWidth lineColor:(UIColor *)lineColor fillColor:(UIColor *)fillColor {
+return [self generateImageWithSize:size zoomRate:zoomRate precision:6000 lineWidth:lineWidth lineColor:lineColor fillColor:fillColor];
+}
+- (UIImage *)generateImageWithSize:(double)size zoomRate:(double)zoomRate fillColor:(UIColor *)fillColor {
+    return [self generateImageWithSize:size zoomRate:zoomRate precision:6000 lineWidth:0.0 lineColor:nil fillColor:fillColor];
 }
 
 - (CAShapeLayer *)generateLayerWithSize:(double)size {

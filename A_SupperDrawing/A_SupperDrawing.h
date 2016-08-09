@@ -55,7 +55,7 @@
  *  @return UIImage
  */
 - (UIImage *)generateImageWithSize:(double)size zoomRate:(double)zoomRate precision:(double)precision
-                         lineWidth:(float)lineWidth color:(UIColor *)color;
+                         lineWidth:(float)lineWidth lineColor:(UIColor *)lineColor fillColor:(UIColor *)fillColor;
 
 #pragma mark - extra helping functions
 - (UIBezierPath *)generatePathWithSize:(double)size;
@@ -66,11 +66,17 @@
 - (UIBezierPath *)generatePathWithSize:(double)size precision:(double)precision lineWidth:(float)lineWidth;
 
 - (UIImage *)generateImageWithSize:(double)size;
-- (UIImage *)generateImageWithSize:(double)size color:(UIColor *)color;
+- (UIImage *)generateImageWithSize:(double)size fillColor:(UIColor *)fillColor;
+- (UIImage *)generateImageWithSize:(double)size lineColor:(UIColor *)lineColor;
+- (UIImage *)generateImageWithSize:(double)size lineColor:(UIColor *)lineColor fillColor:(UIColor *)fillColor;
 - (UIImage *)generateImageWithSize:(double)size lineWidth:(double)lineWidth;
-- (UIImage *)generateImageWithSize:(double)size lineWidth:(double)lineWidth color:(UIColor *)color;
+- (UIImage *)generateImageWithSize:(double)size lineWidth:(double)lineWidth lineColor:(UIColor *)lineColor;
+- (UIImage *)generateImageWithSize:(double)size fillColor:(UIColor *)fillColor;
 - (UIImage *)generateImageWithSize:(double)size zoomRate:(double)zoomRate;
-- (UIImage *)generateImageWithSize:(double)size zoomRate:(double)zoomRate lineWidth:(double)lineWidth color:(UIColor *)color;
+- (UIImage *)generateImageWithSize:(double)size zoomRate:(double)zoomRate lineWidth:(double)lineWidth lineColor:(UIColor *)lineColor;
+- (UIImage *)generateImageWithSize:(double)size zoomRate:(double)zoomRate lineColor:(UIColor *)lineColor fillColor:(UIColor *)fillColor;
+- (UIImage *)generateImageWithSize:(double)size zoomRate:(double)zoomRate lineWidth:(double)lineWidth lineColor:(UIColor *)lineColor fillColor:(UIColor *)fillColor;
+- (UIImage *)generateImageWithSize:(double)size zoomRate:(double)zoomRate fillColor:(UIColor *)fillColor;
 
 - (CAShapeLayer *)generateLayerWithSize:(double)size;
 - (CAShapeLayer *)generateLayerWithSize:(double)size lineColor:(UIColor *)lineColor;
