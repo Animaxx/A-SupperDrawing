@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A925C1391D5A7871002B2506 /* UITextField+ToNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = A925C1381D5A7871002B2506 /* UITextField+ToNumber.m */; };
 		A96F3F461D46AAEF00044329 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F3F451D46AAEF00044329 /* main.m */; };
 		A96F3F491D46AAEF00044329 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F3F481D46AAEF00044329 /* AppDelegate.m */; };
 		A96F3F4C1D46AAEF00044329 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F3F4B1D46AAEF00044329 /* ViewController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A925C1371D5A7871002B2506 /* UITextField+ToNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+ToNumber.h"; sourceTree = "<group>"; };
+		A925C1381D5A7871002B2506 /* UITextField+ToNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+ToNumber.m"; sourceTree = "<group>"; };
 		A96F3F411D46AAEF00044329 /* A_SupperDrawing_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = A_SupperDrawing_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A96F3F451D46AAEF00044329 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A96F3F471D46AAEF00044329 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -76,6 +79,8 @@
 				A96F3F481D46AAEF00044329 /* AppDelegate.m */,
 				A96F3F4A1D46AAEF00044329 /* ViewController.h */,
 				A96F3F4B1D46AAEF00044329 /* ViewController.m */,
+				A925C1371D5A7871002B2506 /* UITextField+ToNumber.h */,
+				A925C1381D5A7871002B2506 /* UITextField+ToNumber.m */,
 				A96F3F4D1D46AAEF00044329 /* Main.storyboard */,
 				A96F3F501D46AAEF00044329 /* Assets.xcassets */,
 				A96F3F521D46AAEF00044329 /* LaunchScreen.storyboard */,
@@ -190,6 +195,7 @@
 				A96F3F4C1D46AAEF00044329 /* ViewController.m in Sources */,
 				A96F3F491D46AAEF00044329 /* AppDelegate.m in Sources */,
 				A96F3F461D46AAEF00044329 /* main.m in Sources */,
+				A925C1391D5A7871002B2506 /* UITextField+ToNumber.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

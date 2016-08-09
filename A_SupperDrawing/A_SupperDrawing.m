@@ -88,6 +88,9 @@
     [bezier closePath];
     [bezier setLineWidth:lineWidth];
     
+    //http://stackoverflow.com/questions/13738364/rotate-cgpath-without-changing-its-position
+//    [bezier applyTransform: CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(45.0f))];
+    
     return bezier;
 }
 - (UIImage *)generateImageWithSize:(double)size zoomRate:(double)zoomRate precision:(double)precision
