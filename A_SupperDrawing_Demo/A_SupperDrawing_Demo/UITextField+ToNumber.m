@@ -17,5 +17,11 @@
         return 1.0;
     }
 }
+- (void)setRandom:(double)start end:(double)end {
+    double s = start * 10, e = end * 10;
+    double r = s + arc4random_uniform(e - s + 1);
+    r = r / 10.0f;
+    [self setText:[NSString stringWithFormat:@"%.1f", r]];
+}
 
 @end

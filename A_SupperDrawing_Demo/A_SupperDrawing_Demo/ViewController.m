@@ -21,6 +21,7 @@
     CAShapeLayer *imageLayer;
     
     __weak IBOutlet UIButton *drawBtn;
+    __weak IBOutlet UIButton *randomBtn;
     
     __weak IBOutlet UITextField *_aTxt;
     __weak IBOutlet UITextField *_bTxt;
@@ -34,8 +35,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    drawBtn.layer.borderWidth = 1.0;
+    drawBtn.layer.borderWidth = 0.5f;
     drawBtn.layer.borderColor = [UIColor blackColor].CGColor;
+    
+    randomBtn.layer.borderWidth = 0.5f;
+    randomBtn.layer.borderColor = [UIColor blackColor].CGColor;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -61,6 +65,9 @@
 }
 
 - (void)drawPhotograph {
+    [self.view endEditing:YES];
+    [drawBtn setEnabled:NO];
+    [randomBtn setEnabled:NO];
     
     A_SupperDrawing *drawing = [A_SupperDrawing A_SupperDrawingWithA:[_aTxt toDouble]
                                                                    b:[_bTxt toDouble]
@@ -71,22 +78,34 @@
                                                                    z:[_zTxt toDouble]];
     
     if (!imageLayer) {
-        imageLayer = [drawing generateLayerWithSize:_demoImageView.frame.size.width zoomRate:0.5f];
-        [self.demoImageView.layer addSublayer:imageLayer];
-        
-        CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-        pathAnimation.duration = 3.0;
-        pathAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
-        pathAnimation.toValue = [NSNumber numberWithFloat:1.0f];
-        [imageLayer addAnimation:pathAnimation forKey:@"strokeEndAnimation"];
-        
-        imageLayer.strokeEnd = 1.0f;
+        [CATransaction begin]; {
+            [CATransaction setCompletionBlock:^{
+                [drawBtn setEnabled:YES];
+                [randomBtn setEnabled:YES];
+            }];
+            
+            imageLayer = [drawing generateLayerWithSize:_demoImageView.frame.size.width zoomRate:0.5f];
+            [self.demoImageView.layer addSublayer:imageLayer];
+            
+            CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+            pathAnimation.duration = 3.0;
+            pathAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
+            pathAnimation.toValue = [NSNumber numberWithFloat:1.0f];
+            [imageLayer addAnimation:pathAnimation forKey:@"strokeEndAnimation"];
+            
+            imageLayer.strokeEnd = 1.0f;
+            
+        } [CATransaction commit];
     } else {
         __block UIBezierPath *path = [drawing generatePathWithSize:_demoImageView.frame.size.width zoomRate:0.5f];
         
         [CATransaction begin]; {
             [CATransaction setCompletionBlock:^{
                 imageLayer.path = path.CGPath;
+                [imageLayer removeAllAnimations];
+                
+                [drawBtn setEnabled:YES];
+                [randomBtn setEnabled:YES];
             }];
             
             CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
@@ -94,6 +113,7 @@
             pathAnimation.toValue =  (__bridge id)imageLayer.path;
             pathAnimation.toValue =  (__bridge id)path.CGPath;
             pathAnimation.removedOnCompletion = false;
+            pathAnimation.fillMode = @"forwards";
             [imageLayer addAnimation:pathAnimation forKey:@"pathAnimation"];
             
         } [CATransaction commit];
@@ -101,7 +121,19 @@
 }
 
 - (IBAction)onClickDraw:(id)sender {
-    [self.view endEditing:YES];
+    [self drawPhotograph];
+}
+- (IBAction)onClickRandom:(id)sender {
+    [_aTxt setRandom:0.1 end:10.0];
+    [_bTxt setRandom:0.1 end:10.0];
+    
+    [_n1Txt setRandom:0.1 end:10.0];
+    [_n2Txt setRandom:0.1 end:1.5];
+    [_n3Txt setRandom:0.1 end:1.5];
+    
+    [_yTxt setRandom:0.1 end:100.0];
+    [_zTxt setRandom:0.1 end:100.0];
+    
     [self drawPhotograph];
 }
 - (IBAction)onClickBackground:(id)sender {

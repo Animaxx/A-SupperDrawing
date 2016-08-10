@@ -11,5 +11,6 @@
 @interface UITextField (ToNumber)
 
 - (double)toDouble;
+- (void)setRandom:(double)start end:(double)end;
 
 @end
