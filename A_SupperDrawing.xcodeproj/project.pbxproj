@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A90E070B1D4BF7AA0038DA3A /* A_DrawingBase.h in Headers */ = {isa = PBXBuildFile; fileRef = A90E07091D4BF7AA0038DA3A /* A_DrawingBase.h */; };
+		A90E070B1D4BF7AA0038DA3A /* A_DrawingBase.h in Headers */ = {isa = PBXBuildFile; fileRef = A90E07091D4BF7AA0038DA3A /* A_DrawingBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A90E070C1D4BF7AA0038DA3A /* A_DrawingBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A90E070A1D4BF7AA0038DA3A /* A_DrawingBase.m */; };
 		A96F3F5F1D46AD5F00044329 /* A_SupperDrawing.h in Headers */ = {isa = PBXBuildFile; fileRef = A96F3F5D1D46AD5F00044329 /* A_SupperDrawing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A96F3F601D46AD5F00044329 /* A_SupperDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F3F5E1D46AD5F00044329 /* A_SupperDrawing.m */; };
