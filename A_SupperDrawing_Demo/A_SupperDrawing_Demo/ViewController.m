@@ -127,12 +127,12 @@
     [_aTxt setRandom:0.1 end:10.0];
     [_bTxt setRandom:0.1 end:10.0];
     
-    [_n1Txt setRandom:0.1 end:10.0];
+    [_n1Txt setRandom:-10.0 end:10.0];
     [_n2Txt setRandom:0.1 end:1.5];
     [_n3Txt setRandom:0.1 end:1.5];
     
-    [_yTxt setRandom:0.1 end:100.0];
-    [_zTxt setRandom:0.1 end:100.0];
+    [_yTxt setRandom:1 end:100];
+    [_zTxt setRandom:1 end:100];
     
     [self drawPhotograph];
 }
