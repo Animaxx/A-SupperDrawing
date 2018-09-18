@@ -43,12 +43,14 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShown:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHidden:) name:UIKeyboardWillHideNotification object:nil];
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+    [super viewWillDisappear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -78,10 +80,14 @@
                                                                    z:[_zTxt toDouble]];
     
     if (!imageLayer) {
+        __weak __typeof(self)weakSelf = self;
         [CATransaction begin]; {
             [CATransaction setCompletionBlock:^{
-                [drawBtn setEnabled:YES];
-                [randomBtn setEnabled:YES];
+                __strong __typeof(weakSelf)strongSelf = weakSelf;
+                if (strongSelf!=nil) {
+                    [strongSelf->drawBtn setEnabled:YES];
+                    [strongSelf->randomBtn setEnabled:YES];
+                }
             }];
             
             imageLayer = [drawing generateLayerWithSize:_demoImageView.frame.size.width zoomRate:0.5f];
@@ -98,14 +104,17 @@
         } [CATransaction commit];
     } else {
         __block UIBezierPath *path = [drawing generatePathWithSize:_demoImageView.frame.size.width zoomRate:0.5f];
-        
+        __weak __typeof(self)weakSelf = self;
         [CATransaction begin]; {
             [CATransaction setCompletionBlock:^{
-                imageLayer.path = path.CGPath;
-                [imageLayer removeAllAnimations];
-                
-                [drawBtn setEnabled:YES];
-                [randomBtn setEnabled:YES];
+                __strong __typeof(weakSelf)strongSelf = weakSelf;
+                if (strongSelf!=nil) {
+                    strongSelf->imageLayer.path = path.CGPath;
+                    [strongSelf->imageLayer removeAllAnimations];
+                    
+                    [strongSelf->drawBtn setEnabled:YES];
+                    [strongSelf->randomBtn setEnabled:YES];
+                }
             }];
             
             CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
