@@ -15,6 +15,7 @@
 		A96F3F511D46AAEF00044329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A96F3F501D46AAEF00044329 /* Assets.xcassets */; };
 		A96F3F541D46AAEF00044329 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A96F3F521D46AAEF00044329 /* LaunchScreen.storyboard */; };
 		A96F3F671D46BE8B00044329 /* A_SupperDrawing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A96F3F661D46BE7E00044329 /* A_SupperDrawing.framework */; };
+		E1A02A9A2151E1B100EE51D7 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A02A982151E1B100EE51D7 /* LaunchImage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		A96F3F531D46AAEF00044329 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A96F3F551D46AAEF00044329 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A96F3F611D46BE7E00044329 /* A_SupperDrawing.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = A_SupperDrawing.xcodeproj; path = ../A_SupperDrawing.xcodeproj; sourceTree = "<group>"; };
+		E1A02A982151E1B100EE51D7 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,23 +81,16 @@
 				A96F3F481D46AAEF00044329 /* AppDelegate.m */,
 				A96F3F501D46AAEF00044329 /* Assets.xcassets */,
 				A96F3F551D46AAEF00044329 /* Info.plist */,
+				E1A02A982151E1B100EE51D7 /* LaunchImage.png */,
 				A96F3F521D46AAEF00044329 /* LaunchScreen.storyboard */,
+				A96F3F451D46AAEF00044329 /* main.m */,
 				A96F3F4D1D46AAEF00044329 /* Main.storyboard */,
-				A96F3F441D46AAEF00044329 /* Supporting Files */,
 				A925C1371D5A7871002B2506 /* UITextField+ToNumber.h */,
 				A925C1381D5A7871002B2506 /* UITextField+ToNumber.m */,
 				A96F3F4A1D46AAEF00044329 /* ViewController.h */,
 				A96F3F4B1D46AAEF00044329 /* ViewController.m */,
 			);
 			path = A_SupperDrawing_Demo;
-			sourceTree = "<group>";
-		};
-		A96F3F441D46AAEF00044329 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A96F3F451D46AAEF00044329 /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		A96F3F621D46BE7E00044329 /* Products */ = {
@@ -179,6 +174,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A02A9A2151E1B100EE51D7 /* LaunchImage.png in Resources */,
 				A96F3F541D46AAEF00044329 /* LaunchScreen.storyboard in Resources */,
 				A96F3F511D46AAEF00044329 /* Assets.xcassets in Resources */,
 				A96F3F4F1D46AAEF00044329 /* Main.storyboard in Resources */,

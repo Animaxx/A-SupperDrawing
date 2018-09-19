@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,14 +14,49 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="gDY-CW-p2b" userLabel="Launch Image">
+                                <rect key="frame" x="16" y="234.66666666666663" width="343" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gDY-CW-p2b" secondAttribute="height" multiplier="1:1" id="AsS-P7-vkX"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A-SupperDrawing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TpH-0S-OQg" userLabel="Title Label">
+                                <rect key="frame" x="16" y="44" width="343" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2016 Animax." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJH-MR-sRR" userLabel="Copyright Label">
+                                <rect key="frame" x="16" y="749" width="343" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iJH-MR-sRR" firstAttribute="leading" secondItem="aw5-th-4mt" secondAttribute="leading" constant="16" id="3XB-e9-lSO"/>
+                            <constraint firstItem="gDY-CW-p2b" firstAttribute="top" relation="greaterThanOrEqual" secondItem="aw5-th-4mt" secondAttribute="top" id="54e-Ym-DF2"/>
+                            <constraint firstItem="TpH-0S-OQg" firstAttribute="top" secondItem="aw5-th-4mt" secondAttribute="top" id="9i2-Be-QFQ"/>
+                            <constraint firstItem="aw5-th-4mt" firstAttribute="bottom" secondItem="gDY-CW-p2b" secondAttribute="bottom" priority="750" id="Ant-TG-eRV"/>
+                            <constraint firstItem="gDY-CW-p2b" firstAttribute="centerX" secondItem="aw5-th-4mt" secondAttribute="centerX" id="EOF-y0-Pjg"/>
+                            <constraint firstItem="TpH-0S-OQg" firstAttribute="leading" secondItem="aw5-th-4mt" secondAttribute="leading" constant="16" id="Gh6-zc-KjN"/>
+                            <constraint firstItem="gDY-CW-p2b" firstAttribute="trailing" secondItem="aw5-th-4mt" secondAttribute="trailing" priority="750" constant="-16" id="JAJ-Oz-OQ7"/>
+                            <constraint firstItem="aw5-th-4mt" firstAttribute="trailing" secondItem="TpH-0S-OQg" secondAttribute="trailing" constant="16" id="MhH-bT-IQb"/>
+                            <constraint firstItem="gDY-CW-p2b" firstAttribute="leading" secondItem="aw5-th-4mt" secondAttribute="leading" priority="750" constant="16" id="QZl-sc-gr9"/>
+                            <constraint firstItem="aw5-th-4mt" firstAttribute="bottom" secondItem="iJH-MR-sRR" secondAttribute="bottom" id="R5l-I6-x05"/>
+                            <constraint firstItem="gDY-CW-p2b" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aw5-th-4mt" secondAttribute="leading" id="Y7h-OY-Xn8"/>
+                            <constraint firstItem="gDY-CW-p2b" firstAttribute="top" secondItem="aw5-th-4mt" secondAttribute="top" priority="750" id="fAH-hb-8VK"/>
+                            <constraint firstItem="aw5-th-4mt" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gDY-CW-p2b" secondAttribute="trailing" id="fku-4s-gcz"/>
+                            <constraint firstItem="aw5-th-4mt" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gDY-CW-p2b" secondAttribute="bottom" id="ohs-it-s7b"/>
+                            <constraint firstItem="aw5-th-4mt" firstAttribute="trailing" secondItem="iJH-MR-sRR" secondAttribute="trailing" constant="16" id="qMQ-L6-XLd"/>
+                            <constraint firstItem="gDY-CW-p2b" firstAttribute="centerY" secondItem="aw5-th-4mt" secondAttribute="centerY" constant="-4.8333333333333712" id="uUK-bg-GW2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aw5-th-4mt"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -28,4 +64,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchImage.png" width="251" height="251"/>
+    </resources>
 </document>
