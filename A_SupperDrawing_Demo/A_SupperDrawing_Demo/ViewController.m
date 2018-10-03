@@ -10,17 +10,16 @@
 #import <A_SupperDrawing/A_SupperDrawing.h>
 #import "UITextField+ToNumber.h"
 
-@interface ViewController ()
+@interface ViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *demoImageView;
-
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
 
 @end
 
 @implementation ViewController {
     CAShapeLayer *imageLayer;
     
-    __weak IBOutlet UIButton *drawBtn;
     __weak IBOutlet UIButton *randomBtn;
     
     __weak IBOutlet UITextField *_aTxt;
@@ -35,20 +34,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    drawBtn.layer.borderWidth = 0.5f;
-    drawBtn.layer.borderColor = [UIColor blackColor].CGColor;
-    
     randomBtn.layer.borderWidth = 0.5f;
     randomBtn.layer.borderColor = [UIColor blackColor].CGColor;
+    
+    _aTxt.delegate = self;
+    _bTxt.delegate = self;
+    _n1Txt.delegate = self;
+    _n2Txt.delegate = self;
+    _n3Txt.delegate = self;
+    _yTxt.delegate = self;
+    _zTxt.delegate = self;
+    
+    _tapGestureRecognizer.cancelsTouchesInView = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShown:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHidden:) name:UIKeyboardWillHideNotification object:nil];
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+    [super viewWillDisappear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -65,9 +73,7 @@
 }
 
 - (void)drawPhotograph {
-    [self.view endEditing:YES];
-    [drawBtn setEnabled:NO];
-    [randomBtn setEnabled:NO];
+    [self->randomBtn setEnabled:NO];
     
     A_SupperDrawing *drawing = [A_SupperDrawing A_SupperDrawingWithA:[_aTxt toDouble]
                                                                    b:[_bTxt toDouble]
@@ -78,10 +84,13 @@
                                                                    z:[_zTxt toDouble]];
     
     if (!imageLayer) {
+        __weak __typeof(self)weakSelf = self;
         [CATransaction begin]; {
             [CATransaction setCompletionBlock:^{
-                [drawBtn setEnabled:YES];
-                [randomBtn setEnabled:YES];
+                __strong __typeof(weakSelf)strongSelf = weakSelf;
+                if (strongSelf!=nil) {
+                    [strongSelf->randomBtn setEnabled:YES];
+                }
             }];
             
             imageLayer = [drawing generateLayerWithSize:_demoImageView.frame.size.width zoomRate:0.5f];
@@ -98,14 +107,16 @@
         } [CATransaction commit];
     } else {
         __block UIBezierPath *path = [drawing generatePathWithSize:_demoImageView.frame.size.width zoomRate:0.5f];
-        
+        __weak __typeof(self)weakSelf = self;
         [CATransaction begin]; {
             [CATransaction setCompletionBlock:^{
-                imageLayer.path = path.CGPath;
-                [imageLayer removeAllAnimations];
-                
-                [drawBtn setEnabled:YES];
-                [randomBtn setEnabled:YES];
+                __strong __typeof(weakSelf)strongSelf = weakSelf;
+                if (strongSelf!=nil) {
+                    strongSelf->imageLayer.path = path.CGPath;
+                    [strongSelf->imageLayer removeAllAnimations];
+                    
+                    [strongSelf->randomBtn setEnabled:YES];
+                }
             }];
             
             CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
@@ -120,9 +131,6 @@
     }
 }
 
-- (IBAction)onClickDraw:(id)sender {
-    [self drawPhotograph];
-}
 - (IBAction)onClickRandom:(id)sender {
     [_aTxt setRandom:0.1 end:10.0];
     [_bTxt setRandom:0.1 end:10.0];
@@ -136,9 +144,56 @@
     
     [self drawPhotograph];
 }
-- (IBAction)onClickBackground:(id)sender {
+
+- (IBAction)tapAction:(id)sender {
+    // Dismiss keyboard by tapping outside keyboard on main view.
     [self.view endEditing:YES];
 }
 
+#pragma mark - UITextFieldDelegate protocol
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    // Restrict textField's to only allow numeric text.
+    // The one exception is empty string which defaults to @"0" is also allowed.
+    BOOL answer = YES;
+    NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    if (newString.length==0) {
+        answer = (textField.text.length != 0);
+    } else {
+        NSScanner *scanner = [NSScanner scannerWithString:newString];
+        answer = [scanner scanDecimal:nil] && scanner.atEnd;
+    };
+    if (answer) {
+        // Redraw with every allowed change since the drawing
+        // algorithm seems fast enough.
+        [self drawPhotograph];
+    }
+    return answer;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    // "The text field calls this method when it is asked to resign the first
+    // responder status."
+    // https://developer.apple.com/documentation/uikit/uitextfielddelegate/1619592-textfieldshouldendediting?language=objc
+    if (textField.text.length==0) {
+        textField.text = @"0";
+    }
+    return YES;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField*)textField {
+    NSInteger nextTag = textField.tag + 1;
+    UIResponder* nextResponder = [textField.superview viewWithTag:nextTag];
+    if (!nextResponder) {
+        // Go back to the first textField .
+        nextTag = 1;
+        nextResponder = [textField.superview viewWithTag:nextTag];
+    }
+    if (nextResponder) {
+        [nextResponder becomeFirstResponder];
+    };
+    [self drawPhotograph];
+    return NO;
+}
 
 @end

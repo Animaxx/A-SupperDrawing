@@ -15,6 +15,8 @@
 		A96F3F511D46AAEF00044329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A96F3F501D46AAEF00044329 /* Assets.xcassets */; };
 		A96F3F541D46AAEF00044329 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A96F3F521D46AAEF00044329 /* LaunchScreen.storyboard */; };
 		A96F3F671D46BE8B00044329 /* A_SupperDrawing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A96F3F661D46BE7E00044329 /* A_SupperDrawing.framework */; };
+		E1CF6A6D21647DD4001B3C97 /* LaunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CF6A6C21647DD4001B3C97 /* LaunchScreen.png */; };
+		E1FAA50A216304D100ADCCFE /* A_SupperDrawing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A96F3F661D46BE7E00044329 /* A_SupperDrawing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,7 +27,28 @@
 			remoteGlobalIDString = A96F3F2D1D46A70500044329;
 			remoteInfo = A_SupperDrawing;
 		};
+		E1FAA50B216304D100ADCCFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A96F3F611D46BE7E00044329 /* A_SupperDrawing.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A96F3F2C1D46A70500044329;
+			remoteInfo = A_SupperDrawing;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E1FAA50D216304D100ADCCFE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E1FAA50A216304D100ADCCFE /* A_SupperDrawing.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A925C1371D5A7871002B2506 /* UITextField+ToNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+ToNumber.h"; sourceTree = "<group>"; };
@@ -41,6 +64,7 @@
 		A96F3F531D46AAEF00044329 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A96F3F551D46AAEF00044329 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A96F3F611D46BE7E00044329 /* A_SupperDrawing.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = A_SupperDrawing.xcodeproj; path = ../A_SupperDrawing.xcodeproj; sourceTree = "<group>"; };
+		E1CF6A6C21647DD4001B3C97 /* LaunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreen.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,27 +99,20 @@
 		A96F3F431D46AAEF00044329 /* A_SupperDrawing_Demo */ = {
 			isa = PBXGroup;
 			children = (
+				E1CF6A6C21647DD4001B3C97 /* LaunchScreen.png */,
 				A96F3F471D46AAEF00044329 /* AppDelegate.h */,
 				A96F3F481D46AAEF00044329 /* AppDelegate.m */,
-				A96F3F4A1D46AAEF00044329 /* ViewController.h */,
-				A96F3F4B1D46AAEF00044329 /* ViewController.m */,
+				A96F3F501D46AAEF00044329 /* Assets.xcassets */,
+				A96F3F551D46AAEF00044329 /* Info.plist */,
+				A96F3F521D46AAEF00044329 /* LaunchScreen.storyboard */,
+				A96F3F451D46AAEF00044329 /* main.m */,
+				A96F3F4D1D46AAEF00044329 /* Main.storyboard */,
 				A925C1371D5A7871002B2506 /* UITextField+ToNumber.h */,
 				A925C1381D5A7871002B2506 /* UITextField+ToNumber.m */,
-				A96F3F4D1D46AAEF00044329 /* Main.storyboard */,
-				A96F3F501D46AAEF00044329 /* Assets.xcassets */,
-				A96F3F521D46AAEF00044329 /* LaunchScreen.storyboard */,
-				A96F3F551D46AAEF00044329 /* Info.plist */,
-				A96F3F441D46AAEF00044329 /* Supporting Files */,
+				A96F3F4A1D46AAEF00044329 /* ViewController.h */,
+				A96F3F4B1D46AAEF00044329 /* ViewController.m */,
 			);
 			path = A_SupperDrawing_Demo;
-			sourceTree = "<group>";
-		};
-		A96F3F441D46AAEF00044329 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A96F3F451D46AAEF00044329 /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		A96F3F621D46BE7E00044329 /* Products */ = {
@@ -116,10 +133,12 @@
 				A96F3F3D1D46AAEF00044329 /* Sources */,
 				A96F3F3E1D46AAEF00044329 /* Frameworks */,
 				A96F3F3F1D46AAEF00044329 /* Resources */,
+				E1FAA50D216304D100ADCCFE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E1FAA50C216304D100ADCCFE /* PBXTargetDependency */,
 			);
 			name = A_SupperDrawing_Demo;
 			productName = A_SupperDrawing_Demo;
@@ -132,7 +151,7 @@
 		A96F3F391D46AAEF00044329 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Animax;
 				TargetAttributes = {
 					A96F3F401D46AAEF00044329 = {
@@ -179,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CF6A6D21647DD4001B3C97 /* LaunchScreen.png in Resources */,
 				A96F3F541D46AAEF00044329 /* LaunchScreen.storyboard in Resources */,
 				A96F3F511D46AAEF00044329 /* Assets.xcassets in Resources */,
 				A96F3F4F1D46AAEF00044329 /* Main.storyboard in Resources */,
@@ -200,6 +220,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E1FAA50C216304D100ADCCFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = A_SupperDrawing;
+			targetProxy = E1FAA50B216304D100ADCCFE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A96F3F4D1D46AAEF00044329 /* Main.storyboard */ = {
@@ -230,13 +258,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -258,7 +296,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -275,13 +313,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -297,7 +345,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -309,6 +357,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = A_SupperDrawing_Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.animax.A-SupperDrawing-Demo";
@@ -320,6 +369,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = A_SupperDrawing_Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.animax.A-SupperDrawing-Demo";

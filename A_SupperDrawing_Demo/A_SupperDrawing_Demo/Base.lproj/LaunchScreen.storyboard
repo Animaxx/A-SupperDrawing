@@ -1,22 +1,66 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="ted-Z9-xao">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A-SupperDrawing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KW-AC-Pca" userLabel="Title Label">
+                                <rect key="frame" x="61" y="52" width="253" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="6hI-tD-4hB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="RJI-6x-5AK" userLabel="Launch Image">
+                                <rect key="frame" x="16" y="239.66666666666663" width="343" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RJI-6x-5AK" secondAttribute="height" multiplier="1:1" id="OJ1-pp-SLX"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2016 Animax." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29j-sj-vyP" userLabel="Copyright Label">
+                                <rect key="frame" x="49" y="730" width="277" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ZOf-HA-Ux7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RJI-6x-5AK" firstAttribute="leading" secondItem="uQN-qE-rBJ" secondAttribute="leading" priority="750" constant="16" id="9s9-Fn-fl9"/>
+                            <constraint firstItem="RJI-6x-5AK" firstAttribute="top" secondItem="6KW-AC-Pca" secondAttribute="bottom" priority="750" constant="16" id="Bpk-LO-qhT"/>
+                            <constraint firstItem="RJI-6x-5AK" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="uQN-qE-rBJ" secondAttribute="trailing" constant="-16" id="EpL-TF-tB1"/>
+                            <constraint firstItem="6KW-AC-Pca" firstAttribute="centerX" secondItem="uQN-qE-rBJ" secondAttribute="centerX" id="JMr-s9-5nA"/>
+                            <constraint firstItem="RJI-6x-5AK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uQN-qE-rBJ" secondAttribute="leading" constant="16" id="LeJ-mV-dm2"/>
+                            <constraint firstItem="29j-sj-vyP" firstAttribute="top" secondItem="RJI-6x-5AK" secondAttribute="bottom" priority="750" constant="16" id="OpS-bs-X6G"/>
+                            <constraint firstItem="uQN-qE-rBJ" firstAttribute="bottom" secondItem="29j-sj-vyP" secondAttribute="bottom" constant="8" id="PkX-tJ-SFh"/>
+                            <constraint firstItem="RJI-6x-5AK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6KW-AC-Pca" secondAttribute="bottom" constant="16" id="QbD-Kx-3Aw"/>
+                            <constraint firstItem="29j-sj-vyP" firstAttribute="centerX" secondItem="uQN-qE-rBJ" secondAttribute="centerX" id="mOH-6O-mYG"/>
+                            <constraint firstItem="uQN-qE-rBJ" firstAttribute="trailing" secondItem="RJI-6x-5AK" secondAttribute="trailing" priority="750" constant="16" id="rAs-PM-nfs"/>
+                            <constraint firstItem="6KW-AC-Pca" firstAttribute="top" secondItem="uQN-qE-rBJ" secondAttribute="top" constant="8" id="sgb-r8-vzk"/>
+                            <constraint firstItem="RJI-6x-5AK" firstAttribute="centerX" secondItem="uQN-qE-rBJ" secondAttribute="centerX" id="tVZ-Dx-J6g"/>
+                            <constraint firstItem="RJI-6x-5AK" firstAttribute="centerY" secondItem="uQN-qE-rBJ" secondAttribute="centerY" id="uKQ-pj-vu3"/>
+                            <constraint firstItem="29j-sj-vyP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="RJI-6x-5AK" secondAttribute="bottom" constant="16" id="vE9-dv-6uR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uQN-qE-rBJ"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +68,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchScreen.png" width="251" height="251"/>
+    </resources>
 </document>
