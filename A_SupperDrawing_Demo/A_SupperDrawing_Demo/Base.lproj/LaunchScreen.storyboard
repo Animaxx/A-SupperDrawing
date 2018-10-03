@@ -14,24 +14,30 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" contentMode="scaleToFill" id="ted-Z9-xao">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="gDY-CW-p2b" userLabel="Launch Image">
-                                <rect key="frame" x="16" y="234.66666666666663" width="343" height="343"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A-SupperDrawing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KW-AC-Pca" userLabel="Title Label">
+                                <rect key="frame" x="61" y="52" width="253" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="gDY-CW-p2b" secondAttribute="height" multiplier="1:1" id="AsS-P7-vkX"/>
+                                    <constraint firstAttribute="height" constant="40" id="6hI-tD-4hB"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A-SupperDrawing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TpH-0S-OQg" userLabel="Title Label">
-                                <rect key="frame" x="16" y="44" width="343" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2016 Animax." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJH-MR-sRR" userLabel="Copyright Label">
-                                <rect key="frame" x="16" y="749" width="343" height="29"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="RJI-6x-5AK" userLabel="Launch Image">
+                                <rect key="frame" x="16" y="239.66666666666663" width="343" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RJI-6x-5AK" secondAttribute="height" multiplier="1:1" id="OJ1-pp-SLX"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2016 Animax." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29j-sj-vyP" userLabel="Copyright Label">
+                                <rect key="frame" x="49" y="730" width="277" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ZOf-HA-Ux7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -39,24 +45,22 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="iJH-MR-sRR" firstAttribute="leading" secondItem="aw5-th-4mt" secondAttribute="leading" constant="16" id="3XB-e9-lSO"/>
-                            <constraint firstItem="gDY-CW-p2b" firstAttribute="top" relation="greaterThanOrEqual" secondItem="aw5-th-4mt" secondAttribute="top" id="54e-Ym-DF2"/>
-                            <constraint firstItem="TpH-0S-OQg" firstAttribute="top" secondItem="aw5-th-4mt" secondAttribute="top" id="9i2-Be-QFQ"/>
-                            <constraint firstItem="aw5-th-4mt" firstAttribute="bottom" secondItem="gDY-CW-p2b" secondAttribute="bottom" priority="750" id="Ant-TG-eRV"/>
-                            <constraint firstItem="gDY-CW-p2b" firstAttribute="centerX" secondItem="aw5-th-4mt" secondAttribute="centerX" id="EOF-y0-Pjg"/>
-                            <constraint firstItem="TpH-0S-OQg" firstAttribute="leading" secondItem="aw5-th-4mt" secondAttribute="leading" constant="16" id="Gh6-zc-KjN"/>
-                            <constraint firstItem="gDY-CW-p2b" firstAttribute="trailing" secondItem="aw5-th-4mt" secondAttribute="trailing" priority="750" constant="-16" id="JAJ-Oz-OQ7"/>
-                            <constraint firstItem="aw5-th-4mt" firstAttribute="trailing" secondItem="TpH-0S-OQg" secondAttribute="trailing" constant="16" id="MhH-bT-IQb"/>
-                            <constraint firstItem="gDY-CW-p2b" firstAttribute="leading" secondItem="aw5-th-4mt" secondAttribute="leading" priority="750" constant="16" id="QZl-sc-gr9"/>
-                            <constraint firstItem="aw5-th-4mt" firstAttribute="bottom" secondItem="iJH-MR-sRR" secondAttribute="bottom" id="R5l-I6-x05"/>
-                            <constraint firstItem="gDY-CW-p2b" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aw5-th-4mt" secondAttribute="leading" id="Y7h-OY-Xn8"/>
-                            <constraint firstItem="gDY-CW-p2b" firstAttribute="top" secondItem="aw5-th-4mt" secondAttribute="top" priority="750" id="fAH-hb-8VK"/>
-                            <constraint firstItem="aw5-th-4mt" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gDY-CW-p2b" secondAttribute="trailing" id="fku-4s-gcz"/>
-                            <constraint firstItem="aw5-th-4mt" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gDY-CW-p2b" secondAttribute="bottom" id="ohs-it-s7b"/>
-                            <constraint firstItem="aw5-th-4mt" firstAttribute="trailing" secondItem="iJH-MR-sRR" secondAttribute="trailing" constant="16" id="qMQ-L6-XLd"/>
-                            <constraint firstItem="gDY-CW-p2b" firstAttribute="centerY" secondItem="aw5-th-4mt" secondAttribute="centerY" constant="-4.8333333333333712" id="uUK-bg-GW2"/>
+                            <constraint firstItem="RJI-6x-5AK" firstAttribute="leading" secondItem="uQN-qE-rBJ" secondAttribute="leading" priority="750" constant="16" id="9s9-Fn-fl9"/>
+                            <constraint firstItem="RJI-6x-5AK" firstAttribute="top" secondItem="6KW-AC-Pca" secondAttribute="bottom" priority="750" constant="16" id="Bpk-LO-qhT"/>
+                            <constraint firstItem="RJI-6x-5AK" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="uQN-qE-rBJ" secondAttribute="trailing" constant="-16" id="EpL-TF-tB1"/>
+                            <constraint firstItem="6KW-AC-Pca" firstAttribute="centerX" secondItem="uQN-qE-rBJ" secondAttribute="centerX" id="JMr-s9-5nA"/>
+                            <constraint firstItem="RJI-6x-5AK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uQN-qE-rBJ" secondAttribute="leading" constant="16" id="LeJ-mV-dm2"/>
+                            <constraint firstItem="29j-sj-vyP" firstAttribute="top" secondItem="RJI-6x-5AK" secondAttribute="bottom" priority="750" constant="16" id="OpS-bs-X6G"/>
+                            <constraint firstItem="uQN-qE-rBJ" firstAttribute="bottom" secondItem="29j-sj-vyP" secondAttribute="bottom" constant="8" id="PkX-tJ-SFh"/>
+                            <constraint firstItem="RJI-6x-5AK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6KW-AC-Pca" secondAttribute="bottom" constant="16" id="QbD-Kx-3Aw"/>
+                            <constraint firstItem="29j-sj-vyP" firstAttribute="centerX" secondItem="uQN-qE-rBJ" secondAttribute="centerX" id="mOH-6O-mYG"/>
+                            <constraint firstItem="uQN-qE-rBJ" firstAttribute="trailing" secondItem="RJI-6x-5AK" secondAttribute="trailing" priority="750" constant="16" id="rAs-PM-nfs"/>
+                            <constraint firstItem="6KW-AC-Pca" firstAttribute="top" secondItem="uQN-qE-rBJ" secondAttribute="top" constant="8" id="sgb-r8-vzk"/>
+                            <constraint firstItem="RJI-6x-5AK" firstAttribute="centerX" secondItem="uQN-qE-rBJ" secondAttribute="centerX" id="tVZ-Dx-J6g"/>
+                            <constraint firstItem="RJI-6x-5AK" firstAttribute="centerY" secondItem="uQN-qE-rBJ" secondAttribute="centerY" id="uKQ-pj-vu3"/>
+                            <constraint firstItem="29j-sj-vyP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="RJI-6x-5AK" secondAttribute="bottom" constant="16" id="vE9-dv-6uR"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="aw5-th-4mt"/>
+                        <viewLayoutGuide key="safeArea" id="uQN-qE-rBJ"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -65,6 +69,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchImage.png" width="251" height="251"/>
+        <image name="LaunchScreen.png" width="251" height="251"/>
     </resources>
 </document>
